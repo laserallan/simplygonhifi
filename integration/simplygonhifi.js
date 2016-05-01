@@ -82,7 +82,7 @@ function simplygonAction(assetURL, newEntityName, qmlWindow) {
 
 qmlWindow = new OverlayWindow({
     title: 'Simplygon', 
-    source: "simplygonhifi.qml", 
+    source: "https://raw.githubusercontent.com/laserallan/simplygonhifi/master/integration/simplygonhifi.qml", 
     height: 320, 
     width: 640, 
     toolWindow: false,
