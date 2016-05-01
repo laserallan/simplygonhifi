@@ -1,0 +1,1 @@
+copy ..\integration\simplygonhifi.js "C:\Program Files\High Fidelity\scripts\system"
