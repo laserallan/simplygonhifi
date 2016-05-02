@@ -16,7 +16,7 @@ app = Flask(__name__)
 api = Api(app)
 work_directory = "c:/simplygonhifi/"
 job_directory = work_directory + "/jobs/"
-simplygon_hifi_dir = "C:\\Users\\david\\work\\git\\simplygonhifi\\simplygon\\"
+simplygon_hifi_dir = "C:\\test\\simplygonhifi\\simplygon\\"
 simplygon_settings = simplygon_hifi_dir + "settings\\reduction.spl"
 simplygon_binary = simplygon_hifi_dir + "SimplygonBatch\\SimplygonBatch.exe"
 
@@ -70,9 +70,10 @@ class Create(Resource):
 		job_dir = job_directory + str(job_ID)
 		os.makedirs(job_dir)
 		f = open(job_dir + '/job.obj', 'w')
-		create_job(str(job_ID), job_directory, simplygon_settings)
 		f.write(request.data)
-
+		f.flush()
+		f.close()
+		create_job(str(job_ID), job_directory, simplygon_settings)
 		#print(request.data)
 		return {'UUID' : str(job_ID)}
 
@@ -98,7 +99,8 @@ class Download(Resource):
 			job_dir = job_directory + uuid
 			f = open(job_dir + '/output/reduction/job/LOD1/job_reduction_LOD1.obj', 'r')
 			data = f.read()
-			print(data)
+			data = "#" + data
+			#print(data)
 			response = make_response(data)
 			response.headers['content-type'] = 'application/octet-stream'	
 			return response
@@ -112,7 +114,7 @@ api.add_resource(Create, '/simplygon/create')
 api.add_resource(Download, '/simplygon/download/<string:uuid>')
 
 if __name__ == '__main__':
-	app.run()
+	app.run(host= '0.0.0.0')
 	#uuid = '8211f9f2-3a94-424f-9eac-3556d56ec3e8'
 	#run_job(uuid, 'C:\\simplygonhifi\\jobs\\', simplygon_settings)
 	#create_job(uuid, 'C:\\simplygonhifi\\jobs\\', simplygon_settings)
