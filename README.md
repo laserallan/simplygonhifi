@@ -8,7 +8,7 @@ It requires a machine running Simplygon and the process python script. This may 
 * It currently only processes obj-files without materials
 * The scaling of processed meshes seem to be generally off
 * It requires a lot of manual work to get things through but it should be easy to extend to automate more
-* It is not production code, specially the download command is dangerous since it might access the entire file system of the processing machine , don't deploy publically
+* It is not production code, specially the download command is dangerous since it might access the entire file system of the processing machine. Don't deploy it on machines available for everyone
 
 ## Installation on the processing machine
 * Install the latest version of Simplygon 8 and make sure the license is installed and valid
