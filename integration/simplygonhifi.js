@@ -1,6 +1,5 @@
 
-
-var simplygonAPI = "http://54.183.113.237:5000/simplygon";
+var simplygonAPI = "http://REPLACE_WITH_IP:5000/simplygon";
 //var assetURL2 = "atp:4db3ffc82139424916428c389d4fe9c0fc12e1d1a49e648376b835fdd9b31c13.obj";
 //var assetURL3 = "atp:272abfac67b50318456a0d20008db13f94148ed71626821050268d17354e58c1.fbx";
 //var assetURL4 = "atp:94496f8d59e646af0fb5ad714b970796be2c68b40345184c78bd84278231f238.obj";
