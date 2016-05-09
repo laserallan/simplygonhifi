@@ -8,7 +8,8 @@ It requires a machine running Simplygon and the process python script. This may 
 * It currently only processes obj-files without materials
 * The scaling of processed meshes seem to be generally off
 * It requires a lot of manual work to get things through but it should be easy to extend to automate more
-* 
+* It is not production code, specially the download command is dangerous since it might access the entire file system of the processing machine , don't deploy publically
+
 ## Installation on the processing machine
 * Install the latest version of Simplygon 8 and make sure the license is installed and valid
 * Create the directories c:/simplygonhifi/jobs or edit the work_directory variable in simplygon.py to point to where you want jobs to be put
